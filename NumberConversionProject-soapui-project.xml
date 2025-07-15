@@ -1,5 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="cb089c36-1f4f-42a5-89da-0f4f6d18eacf" activeEnvironment="Default" name="NumberConversionProject" resourceRoot="" soapui-version="5.8.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="034b3fb1-834e-4764-a842-34151d52ca5d" wsaVersion="NONE" name="NumberConversionSoapBinding" type="wsdl" bindingName="{http://www.dataaccess.com/webservicesserver/}NumberConversionSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://www.dataaccess.com/webservicesserver/NumberConversion.wso</con:endpoint></con:endpoints><con:operation id="8c65f8d7-6ad7-4bd2-9212-18a2196959ec" isOneWay="false" action="" name="NumberToDollars" bindingOperationName="NumberToDollars" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7a11a35e-1d35-4a96-b17c-f6144bc86bb2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.dataaccess.com/webservicesserver/NumberConversion.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.dataaccess.com/webservicesserver/">\r
+<con:soapui-project id="cb089c36-1f4f-42a5-89da-0f4f6d18eacf" activeEnvironment="Default" name="NumberConversionProject" resourceRoot="" soapui-version="5.8.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="NumberConversionSuite"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="NumberToWordsTestCase"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="034b3fb1-834e-4764-a842-34151d52ca5d" wsaVersion="NONE" name="NumberConversionSoapBinding" type="wsdl" bindingName="{http://www.dataaccess.com/webservicesserver/}NumberConversionSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL"><con:part><con:url>https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL</con:url><con:content><![CDATA[<definitions name="NumberConversion" targetNamespace="http://www.dataaccess.com/webservicesserver/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.dataaccess.com/webservicesserver/">
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.dataaccess.com/webservicesserver/">
+      <xs:element name="NumberToWords">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ubiNum" type="xs:unsignedLong"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NumberToWordsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="NumberToWordsResult" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NumberToDollars">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="dNum" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NumberToDollarsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="NumberToDollarsResult" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </types>
+  <message name="NumberToWordsSoapRequest">
+    <part name="parameters" element="tns:NumberToWords"/>
+  </message>
+  <message name="NumberToWordsSoapResponse">
+    <part name="parameters" element="tns:NumberToWordsResponse"/>
+  </message>
+  <message name="NumberToDollarsSoapRequest">
+    <part name="parameters" element="tns:NumberToDollars"/>
+  </message>
+  <message name="NumberToDollarsSoapResponse">
+    <part name="parameters" element="tns:NumberToDollarsResponse"/>
+  </message>
+  <portType name="NumberConversionSoapType">
+    <operation name="NumberToWords">
+      <documentation>Returns the word corresponding to the positive number passed as parameter. Limited to quadrillions.</documentation>
+      <input message="tns:NumberToWordsSoapRequest"/>
+      <output message="tns:NumberToWordsSoapResponse"/>
+    </operation>
+    <operation name="NumberToDollars">
+      <documentation>Returns the non-zero dollar amount of the passed number.</documentation>
+      <input message="tns:NumberToDollarsSoapRequest"/>
+      <output message="tns:NumberToDollarsSoapResponse"/>
+    </operation>
+  </portType>
+  <binding name="NumberConversionSoapBinding" type="tns:NumberConversionSoapType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="NumberToWords">
+      <soap:operation soapAction="" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="NumberToDollars">
+      <soap:operation soapAction="" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="NumberConversionSoapBinding12" type="tns:NumberConversionSoapType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="NumberToWords">
+      <soap12:operation soapAction="" style="document"/>
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="NumberToDollars">
+      <soap12:operation soapAction="" style="document"/>
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="NumberConversion">
+    <documentation>The Number Conversion Web Service, implemented with Visual DataFlex, provides functions that convert numbers into words or dollar amounts.</documentation>
+    <port name="NumberConversionSoap" binding="tns:NumberConversionSoapBinding">
+      <soap:address location="https://www.dataaccess.com/webservicesserver/NumberConversion.wso"/>
+    </port>
+    <port name="NumberConversionSoap12" binding="tns:NumberConversionSoapBinding12">
+      <soap12:address location="https://www.dataaccess.com/webservicesserver/NumberConversion.wso"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://www.dataaccess.com/webservicesserver/NumberConversion.wso</con:endpoint></con:endpoints><con:operation id="8c65f8d7-6ad7-4bd2-9212-18a2196959ec" isOneWay="false" action="" name="NumberToDollars" bindingOperationName="NumberToDollars" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7a11a35e-1d35-4a96-b17c-f6144bc86bb2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.dataaccess.com/webservicesserver/NumberConversion.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.dataaccess.com/webservicesserver/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <web:NumberToDollars>\r
@@ -13,7 +152,7 @@
          <web:ubiNum>?</web:ubiNum>\r
       </web:NumberToWords>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.dataaccess.com/webservicesserver/NumberConversionSoapType/NumberToWordsRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="918d083c-84b1-4a6e-823c-205fad24dae0" wsaVersion="NONE" name="NumberConversionSoapBinding12" type="wsdl" bindingName="{http://www.dataaccess.com/webservicesserver/}NumberConversionSoapBinding12" soapVersion="1_2" anonymous="optional" definition="https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL"><con:part><con:url>https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL</con:url><con:content><![CDATA[<definitions name="NumberConversion" targetNamespace="http://www.dataaccess.com/webservicesserver/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.dataaccess.com/webservicesserver/">
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.dataaccess.com/webservicesserver/NumberConversionSoapType/NumberToWordsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="918d083c-84b1-4a6e-823c-205fad24dae0" wsaVersion="NONE" name="NumberConversionSoapBinding12" type="wsdl" bindingName="{http://www.dataaccess.com/webservicesserver/}NumberConversionSoapBinding12" soapVersion="1_2" anonymous="optional" definition="https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL"><con:part><con:url>https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL</con:url><con:content><![CDATA[<definitions name="NumberConversion" targetNamespace="http://www.dataaccess.com/webservicesserver/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.dataaccess.com/webservicesserver/">
   <types>
     <xs:schema elementFormDefault="qualified" targetNamespace="http://www.dataaccess.com/webservicesserver/">
       <xs:element name="NumberToWords">
@@ -135,11 +274,66 @@
          <web:ubiNum>?</web:ubiNum>\r
       </web:NumberToWords>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.dataaccess.com/webservicesserver/NumberConversionSoapType/NumberToWordsRequest"/></con:call></con:operation></con:interface><con:testSuite id="f4414b14-66f8-4ebe-a914-5f1157a211fa" name="NumberConversionSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="469053a6-b134-4869-938e-57b1e0de6288" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="NumberToWordsTestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="NumberToWords" id="a8b4fb3d-6a36-4f35-b970-f4c2510131db"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>NumberConversionSoapBinding</con:interface><con:operation>NumberToWords</con:operation><con:request name="NumberToWords" id="b632b24a-4895-4198-ab7c-b45ce0339347"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.dataaccess.com/webservicesserver/NumberConversion.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.dataaccess.com/webservicesserver/">\r
-   <soapenv:Header/>\r
-   <soapenv:Body>\r
-      <web:NumberToWords>\r
-         <web:ubiNum>1244</web:ubiNum>\r
-      </web:NumberToWords>\r
-   </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="718119aa-f8af-4a9f-bf4e-fb92bbd109d8"/><con:assertion type="Simple Contains" id="0a1975bb-4d75-4596-8aca-b91daf471b7d" name="Contains"><con:configuration><token>thousand</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XPath Match" id="0fd26b8a-083b-4dae-a2e2-d3b0a9cf7088" name="XPath Match"><con:configuration><path>//*[local-name()='NumberToWordsResult']</path><content>one thousand two hundred and thirty four</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match"/><con:assertion type="XPath Match" id="0fd26b8a-083b-4dae-a2e2-d3b0a9cf7088" name="Negative XPath Match"><con:configuration><path>//*[local-name()='NumberToWordsResult']</path><content>one thousand two hundred and forty four</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.dataaccess.com/webservicesserver/NumberConversionSoapType/NumberToWordsRequest"/></con:call></con:operation></con:interface><con:testSuite id="f4414b14-66f8-4ebe-a914-5f1157a211fa" name="NumberConversionSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="469053a6-b134-4869-938e-57b1e0de6288" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="NumberToWordsTestCase" searchProperties="true"><con:settings/><con:testStep type="groovy" name="setTestData" id="1d333d79-a7cc-42f1-94a8-074d7a63964e"><con:settings/><con:config><script>def testData = [
+		[input: "1234", expected: "one thousand two hundred and thirty four"],
+		[input: "99", expected: "ninety nine"],
+		[input: "10001", expected: "ten thousand one"]
+		
+	]
+
+context.setProperty("testDataList", testData)
+context.setProperty("index","0")
+
+</script></con:config></con:testStep><con:testStep type="groovy" name="PrepareRequest" id="d79289a3-e139-4ab7-a80a-cdae731ecc54"><con:settings/><con:config><script><![CDATA[
+
+
+def dataList = context.getProperty("testDataList")
+
+def index = context.getProperty("index") as int
+def testData = dataList[index]
+
+// Build request XML
+
+def soapBody = """
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:web="http://www.dataaccess.com/webservicesserver/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:NumberToWords>
+         <web:ubiNum>${testData.input}</web:ubiNum>
+      </web:NumberToWords>
+   </soapenv:Body>
+</soapenv:Envelope>
+"""
+
+
+testRunner.testCase.getTestStepByName("Request1").setPropertyValue("Request", soapBody)
+context.setProperty("expectedValue", testData.expected)]]></script></con:config></con:testStep><con:testStep type="groovy" name="ValidateResponse" id="b5090926-1d93-4763-9e95-39607c708c97"><con:settings/><con:config><script>def result = testRunner.runTestStepByName("Request1")
+def response = context.expand('${Request1#Response}')
+log.info("response is : ${response}")
+def expected = context.getProperty("expectedValue")
+
+assert response.toLowerCase().contains(expected.toLowerCase()) : "Expected '${expected}' not found in response!, returned ${response}"
+
+log.info ("Test passed for '${expected}'")</script></con:config></con:testStep><con:testStep type="groovy" name="IncrementAndLoop" id="7d6ac3ba-23af-475f-ac77-c173f1135bde"><con:settings/><con:config><script>def dataList = context.getProperty("testDataList")
+def index = context.getProperty("index") as int
+index++
+
+if (index &lt; dataList.size()){
+	context.setProperty("index", index.toString())
+	testRunner.gotoStepByName("PrepareRequest")
+}else{
+	log.info ("All test cases completed.")
+}
+
+</script></con:config></con:testStep><con:testStep type="request" name="Request1" id="8af83264-a98d-45f3-b084-3faae57e41de"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>NumberConversionSoapBinding</con:interface><con:operation>NumberToWords</con:operation><con:request name="Request1" id="a7a80f59-cafe-42ed-a2ed-86ff4933b564"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.dataaccess.com/webservicesserver/NumberConversion.wso</con:endpoint><con:request><![CDATA[
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:web="http://www.dataaccess.com/webservicesserver/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:NumberToWords>
+         <web:ubiNum>10001</web:ubiNum>
+      </web:NumberToWords>
+   </soapenv:Body>
+</soapenv:Envelope>
+]]></con:request><con:assertion type="SOAP Response" id="9d3e72cd-77e1-47bf-a008-8999de263f01"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
